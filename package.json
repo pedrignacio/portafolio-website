@@ -1,0 +1,39 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portafolio personal de Pedro San Martín - Desarrollador Full Stack",
+  "main": "src/pages/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "frontend",
+    "fullstack",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": {
+    "name": "Pedro San Martín",
+    "email": "psanmartincarrasco@gmail.com",
+    "url": "https://github.com/pedrignacio"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedrignacio/portfolio-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedrignacio/portfolio-website/issues"
+  },
+  "homepage": "https://pedrignacio.github.io/portfolio-website",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "live-server": "^1.2.1"
+  }
+}
