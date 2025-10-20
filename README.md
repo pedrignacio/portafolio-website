@@ -236,6 +236,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ---
 
-⭐️ **Si te gustó este proyecto, dale una estrella en GitHub!** ⭐️
-
 **Desarrollado por Pedro San Martín Carrasco**
