@@ -7,32 +7,52 @@
     <meta name="keywords" content="desarrollador, full stack, Node.js, Angular, Ionic, portafolio">
     <meta name="author" content="Pedro San Martín">
     <title>Pedro San Martín | Desarrollador Full Stack</title>
-    <link rel="stylesheet" href="./src/styles/main.css">
-
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pedrignacio.github.io/portafolio-website/">
     <meta property="og:title" content="Pedro San Martín | Desarrollador Full Stack">
-    <meta property="og:description" content="Portafolio de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic">
+    <meta property="og:description" content="Portafolio profesional de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic. Proyectos, experiencia y certificaciones.">
     <meta property="og:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pedrignacio.github.io/portafolio-website/">
     <meta property="twitter:title" content="Pedro San Martín | Desarrollador Full Stack">
-    <meta property="twitter:description" content="Portafolio de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic">
+    <meta property="twitter:description" content="Portafolio profesional de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic.">
     <meta property="twitter:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
+    <!-- Barra de progreso de lectura -->
+    <div class="reading-progress"></div>
+    
     <header>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#certificaciones">Certificaciones</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
         </nav>
     </header>
 
@@ -48,10 +68,6 @@
                     <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
                     <a href="#contacto" class="btn-secondary">Contactar</a>
                 </div>
-            </div>
-            <div class="hero-scroll">
-                <span>Scroll</span>
-                <div class="scroll-indicator"></div>
             </div>
         </section>
 
@@ -86,12 +102,14 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Especialista en Soporte TI en terreno</h3>
-                        <h4 class="timeline-company">Nexsis Ltda - BancoEstado</h4>
+                        <h4 class="timeline-company">Nexsis Ltda (Cliente: Certinet / BancoEstado)</h4>
                         <p class="timeline-date">Agosto 2025 - Actualidad</p>
                         <ul class="timeline-description">
-                            <li>Instalación y configuración de certificados digitales (e-Token)</li>
-                            <li>Implementación de firma electrónica avanzada (GoSign, SafeNet)</li>
-                            <li>Soporte en terreno a instituciones públicas</li>
+                            <li>Instalación, configuración y mantenimiento de certificados digitales e-Token</li>
+                            <li>Implementación de firma electrónica avanzada con SafeNet y GoSign</li>
+                            <li>Pruebas de firma, enrolamiento y validación de identidad con Certinet</li>
+                            <li>Soporte en terreno a instituciones públicas y privadas</li>
+                            <li>Documentación técnica detallada de intervenciones</li>
                         </ul>
                     </div>
                 </div>
@@ -99,13 +117,15 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Freelancer en desarrollo y gestión digital</h3>
+                        <h3 class="timeline-title">Desarrollador Freelancer (Práctica Profesional)</h3>
                         <h4 class="timeline-company">MasterBase®</h4>
-                        <p class="timeline-date">Mayo 2025 - Agosto 2025</p>
+                        <p class="timeline-date">Mayo 2025 - Julio 2025</p>
                         <ul class="timeline-description">
-                            <li>Desarrollo de solución digital para gestión de proyectos</li>
-                            <li>Automatización de procesos y creación de paneles</li>
-                            <li>Trabajo colaborativo bajo metodologías ágiles</li>
+                            <li>Desarrollo de solución digital para gestión de proyectos freelance</li>
+                            <li>Creación de scripts de validación avanzada y sistemas de notificaciones</li>
+                            <li>Diseño de paneles de productividad y dashboards interactivos</li>
+                            <li>Automatización de flujos de trabajo con JavaScript</li>
+                            <li>Colaboración en arquitectura técnica escalable</li>
                         </ul>
                     </div>
                 </div>
@@ -113,14 +133,103 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Soporte Técnico</h3>
-                        <h4 class="timeline-company">Cetecom</h4>
+                        <h3 class="timeline-title">Soporte TI (Práctica Laboral)</h3>
+                        <h4 class="timeline-company">Duoc UC - Cetecom</h4>
                         <p class="timeline-date">Agosto 2024 - Diciembre 2024</p>
                         <ul class="timeline-description">
-                            <li>Instalación y mantenimiento de software y hardware</li>
+                            <li>Instalación y configuración de software, hardware y laboratorios</li>
+                            <li>Mantenimiento preventivo y correctivo de equipos</li>
                             <li>Soporte directo a estudiantes y docentes</li>
-                            <li>Gestión de inventarios tecnológicos</li>
+                            <li>Gestión de inventarios tecnológicos con sistemas de control</li>
+                            <li>Preparación logística para talleres y capacitaciones</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Gestor de Bodega</h3>
+                        <h4 class="timeline-company">Salfa</h4>
+                        <p class="timeline-date">Marzo 2019 - Noviembre 2019</p>
+                        <ul class="timeline-description">
+                            <li>Gestión completa de logística: recepción, almacenamiento y despacho</li>
+                            <li>Control de inventario y trazabilidad de productos</li>
+                            <li>Gestión documental y registro en sistema informático</li>
+                            <li>Atención a clientes internos y externos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificaciones" class="certifications-section">
+            <h2 class="section-title">Certificaciones y Educación</h2>
+            <div class="certifications-grid">
+                <div class="cert-category">
+                    <h3 class="cert-category-title">🎓 Educación Formal</h3>
+                    <div class="cert-item">
+                        <h4>Ingeniería en Informática</h4>
+                        <p class="cert-institution">Duoc UC</p>
+                        <p class="cert-date">Julio 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Certificado de Currículum Completo</h4>
+                        <p class="cert-institution">Duoc UC</p>
+                        <p class="cert-date">Agosto 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Certificado de Módulos</h4>
+                        <p class="cert-institution">Duoc UC</p>
+                        <p class="cert-date">Agosto 2025</p>
+                        <p class="cert-modules">Módulos: Programación de Software, Arquitectura de Software, Calidad de Software, Inteligencia de Negocios, Análisis y Desarrollo de Modelos de Datos</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Técnico en Administración, Mención RR.HH.</h4>
+                        <p class="cert-institution">Liceo Enrique Oyarzún Mondaca</p>
+                        <p class="cert-date">2021</p>
+                    </div>
+                </div>
+
+                <div class="cert-category">
+                    <h3 class="cert-category-title">💻 Desarrollo y Automatización</h3>
+                    <div class="cert-item">
+                        <h4>Smartview Avanzado</h4>
+                        <p class="cert-institution">MasterBase®</p>
+                        <p class="cert-date">Mayo 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Smartview Inicial</h4>
+                        <p class="cert-institution">MasterBase®</p>
+                        <p class="cert-date">Mayo 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Descubre Automatización</h4>
+                        <p class="cert-institution">MasterBase®</p>
+                        <p class="cert-date">Mayo 2025</p>
+                    </div>
+                </div>
+
+                <div class="cert-category">
+                    <h3 class="cert-category-title">📊 Gestión de Proyectos</h3>
+                    <div class="cert-item">
+                        <h4>Scrum Fundamentals Certified (SFC)</h4>
+                        <p class="cert-institution">SCRUMStudy</p>
+                        <p class="cert-date">Junio 2023</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Gestión de Proyectos TI</h4>
+                        <p class="cert-institution">Duoc UC</p>
+                        <p class="cert-date">Agosto 2025</p>
+                    </div>
+                </div>
+
+                <div class="cert-category">
+                    <h3 class="cert-category-title">🔒 Seguridad</h3>
+                    <div class="cert-item">
+                        <h4>ISO 27001 - Seguridad de la Información</h4>
+                        <p class="cert-institution">SEGURIDAD CERO</p>
+                        <p class="cert-date">Septiembre 2025</p>
                     </div>
                 </div>
             </div>
@@ -132,17 +241,24 @@
                 <div class="project-card">
                     <img src="./src/assets/proyecto-flota.jpg" alt="Sistema de Gestión de Flota" class="project-image">
                     <div class="project-content">
-                        <h3 class="project-title">Sistema Integral de Gestión de Flota</h3>
+                        <h3 class="project-title">Sistema Integral de Gestión de Flota (SIF)</h3>
+                        <span class="project-badge">Proyecto de Título</span>
                         <p class="project-description">
-                            Solución logística full-stack para optimizar operaciones y reducir costos, con módulos de gestión de combustible, órdenes de trabajo y dashboard con KPIs.
+                            Solución full-stack para optimizar operaciones logísticas terrestres en tiempo real. Incluye gestión de combustible, órdenes de trabajo, siniestros, dashboard con KPIs y simulador de rutas.
                         </p>
                         <div class="project-tech">
                             <span class="skill-tag">Angular</span>
                             <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
                             <span class="skill-tag">MySQL</span>
                             <span class="skill-tag">Ionic</span>
+                            <span class="skill-tag">TypeScript</span>
                         </div>
-                        <a href="https://github.com/pedrignacio" target="_blank" rel="noopener" class="project-link">Ver Proyecto</a>
+                        <div class="project-links">
+                            <a href="https://github.com/pedrignacio/SIF" target="_blank" rel="noopener" class="project-link">
+                                <span>📂</span> Repositorio
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -150,15 +266,91 @@
                     <img src="./src/assets/proyecto-freelance.jpg" alt="Gestión de Proyectos Freelance" class="project-image">
                     <div class="project-content">
                         <h3 class="project-title">Plataforma de Gestión Freelance</h3>
+                        <span class="project-badge">MasterBase®</span>
                         <p class="project-description">
-                            Plataforma para freelancers orientada a centralizar proyectos, tareas y clientes, con automatización de recordatorios y paneles de productividad.
+                            Plataforma integral para freelancers que centraliza proyectos, tareas y clientes. Con automatización de recordatorios, paneles de productividad y dashboards con KPIs en tiempo real.
                         </p>
                         <div class="project-tech">
-                            <span class="skill-tag">MasterBase</span>
+                            <span class="skill-tag">MasterBase®</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">Automatización</span>
+                            <span class="skill-tag">Lógicas de Negocio</span>
+                            <span class="skill-tag">Dashboards</span>
                         </div>
-                        <a href="https://github.com/pedrignacio" target="_blank" rel="noopener" class="project-link">Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="skills-section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">💻 Desarrollo de Software</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge advanced">Node.js</span>
+                        <span class="skill-badge advanced">JavaScript</span>
+                        <span class="skill-badge advanced">Angular</span>
+                        <span class="skill-badge advanced">HTML5</span>
+                        <span class="skill-badge advanced">CSS3</span>
+                        <span class="skill-badge intermediate">TypeScript</span>
+                        <span class="skill-badge intermediate">Ionic</span>
+                        <span class="skill-badge intermediate">Express.js</span>
+                        <span class="skill-badge basic">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🗄️ Bases de Datos</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge advanced">MySQL</span>
+                        <span class="skill-badge advanced">SQL</span>
+                        <span class="skill-badge advanced">Diseño de BD</span>
+                        <span class="skill-badge intermediate">Modelado de Datos</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🔧 Herramientas y DevOps</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge advanced">Git</span>
+                        <span class="skill-badge advanced">GitHub</span>
+                        <span class="skill-badge intermediate">Control de Versiones</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">📊 Gestión de Proyectos</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge advanced">Metodologías Ágiles</span>
+                        <span class="skill-badge advanced">Scrum</span>
+                        <span class="skill-badge intermediate">Gestión de Riesgos</span>
+                        <span class="skill-badge intermediate">Planificación</span>
+                        <span class="skill-badge intermediate">Waterfall</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">⚙️ Soporte y Operaciones</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge advanced">Soporte TI</span>
+                        <span class="skill-badge advanced">Certificados Digitales</span>
+                        <span class="skill-badge advanced">Firma Electrónica</span>
+                        <span class="skill-badge intermediate">SafeNet</span>
+                        <span class="skill-badge intermediate">GoSign</span>
+                        <span class="skill-badge intermediate">ISO 27001</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">👥 Habilidades Blandas</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge soft">Trabajo en Equipo</span>
+                        <span class="skill-badge soft">Comunicación</span>
+                        <span class="skill-badge soft">Resolución de Problemas</span>
+                        <span class="skill-badge soft">Adaptabilidad</span>
+                        <span class="skill-badge soft">Liderazgo</span>
+                        <span class="skill-badge soft">Pensamiento Crítico</span>
                     </div>
                 </div>
             </div>
@@ -204,21 +396,11 @@
         <p>&copy; 2025 Pedro San Martín. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Botón volver arriba -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
+        <span>↑</span>
+    </button>
+
     <script src="./src/scripts/main.js"></script>
 </body>
 </html>
-
-
-img {
-    loading: lazy;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
