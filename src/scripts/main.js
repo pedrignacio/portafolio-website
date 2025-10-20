@@ -106,14 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Toggle tema (funcionalidad básica para futuro)
+    // Toggle Tema Claro/Oscuro
     const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            // Por ahora solo un mensaje, implementarás el tema después
-            console.log('Theme toggle clicked - Feature coming soon!');
-        });
-    }
+    const themeIcon = document.querySelector('.theme-icon');
+    
+    // Cargar tema guardado o usar el sistema
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const currentTheme = savedTheme || systemTheme;
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+    });
 
     console.log('✅ Portfolio loaded successfully!');
 });
