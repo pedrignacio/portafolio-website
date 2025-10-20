@@ -8,6 +8,20 @@
     <meta name="author" content="Pedro San Martín">
     <title>Pedro San Martín | Desarrollador Full Stack</title>
     <link rel="stylesheet" href="./src/styles/main.css">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pedrignacio.github.io/portafolio-website/">
+    <meta property="og:title" content="Pedro San Martín | Desarrollador Full Stack">
+    <meta property="og:description" content="Portafolio de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic">
+    <meta property="og:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pedrignacio.github.io/portafolio-website/">
+    <meta property="twitter:title" content="Pedro San Martín | Desarrollador Full Stack">
+    <meta property="twitter:description" content="Portafolio de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic">
+    <meta property="twitter:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
 </head>
 <body>
     <header>
@@ -193,3 +207,18 @@
     <script src="./src/scripts/main.js"></script>
 </body>
 </html>
+
+
+img {
+    loading: lazy;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
