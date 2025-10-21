@@ -127,6 +127,53 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
     });
 
-    console.log('✅ Portfolio loaded successfully!');
+console.log('✅ Portfolio loaded successfully!');
+});
+
+// Funciones del modal de certificados (fuera del DOMContentLoaded)
+function openCertModal(title, institution, date, pdfUrl) {
+    const modal = document.getElementById('cert-modal');
+    const modalTitle = document.getElementById('modal-cert-title');
+    const modalInstitution = document.getElementById('modal-cert-institution');
+    const modalDate = document.getElementById('modal-cert-date');
+    const certPreview = document.getElementById('cert-preview');
+    const downloadBtn = document.getElementById('cert-download-btn');
+
+    // Actualizar información
+    modalTitle.textContent = title;
+    modalInstitution.textContent = institution;
+    modalDate.textContent = date;
+    
+    // Configurar preview y descarga
+    certPreview.src = pdfUrl;
+    downloadBtn.href = pdfUrl;
+    downloadBtn.download = `${title.replace(/\s+/g, '-')}.pdf`;
+
+    // Mostrar modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+    const modal = document.getElementById('cert-modal');
+    const certPreview = document.getElementById('cert-preview');
+    
+    modal.classList.remove('active');
+    certPreview.src = '';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCertModal();
+    }
+});
+
+// Cerrar modal al hacer click fuera
+document.getElementById('cert-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'cert-modal') {
+        closeCertModal();
+    }
 });
 
