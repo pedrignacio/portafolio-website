@@ -1,53 +1,100 @@
 // Main JavaScript file for the portfolio webpage
 
+console.log('🚀 Cargando portafolio...');
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Barra de progreso de lectura
-    const progressBar = document.querySelector('.reading-progress');
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = scrollPercent + '%';
-    });
+    // ========================================
+    // MENÚ MÓVIL
+    // ========================================
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    // Botón Scroll to Top
-    const scrollToTopBtn = document.getElementById('scroll-to-top');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('visible');
-        } else {
-            scrollToTopBtn.classList.remove('visible');
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // Abrir/Cerrar menú con el botón hamburguesa
+    if (menuToggle && nav && menuOverlay) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('🍔 Toggle menú');
+            nav.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
         });
-    });
 
-    // Menu hamburguesa mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        nav.classList.toggle('active');
-    });
-
-    // Cerrar menú al hacer click en un enlace
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
+        // Cerrar menú al hacer clic en el overlay
+        menuOverlay.addEventListener('click', () => {
+            console.log('❌ Cerrar menú (overlay)');
             nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
         });
-    });
 
-    // Smooth scroll para todos los enlaces internos
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('❌ Cerrar menú (link)');
+                nav.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // ========================================
+    // TEMA CLARO/OSCURO
+    // ========================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
+
+    // Detectar preferencia del sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Cargar tema guardado o usar preferencia del sistema
+    const savedTheme = localStorage.getItem('theme');
+    const currentTheme = savedTheme || (prefersDark.matches ? 'dark' : 'light');
+
+    // Aplicar tema inicial
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (themeIcon) {
+        themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+    }
+
+    console.log(`🎨 Tema inicial: ${currentTheme}`);
+
+    // Toggle tema al hacer clic
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+            
+            console.log(`🎨 Tema cambiado a: ${newTheme}`);
+        });
+    }
+
+    // ========================================
+    // BARRA DE PROGRESO DE LECTURA
+    // ========================================
+    const readingProgress = document.querySelector('.reading-progress');
+
+    if (readingProgress) {
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            readingProgress.style.width = scrolled + '%';
+        });
+    }
+
+    // ========================================
+    // SCROLL SUAVE
+    // ========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -61,44 +108,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animaciones al hacer scroll (Intersection Observer)
+    // ========================================
+    // ANIMACIONES AL SCROLL
+    // ========================================
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('fade-in');
             }
         });
     }, observerOptions);
 
-    // Observar elementos para animaciones
-    document.querySelectorAll('.project-card, .timeline-item, .cert-category, .skill-category').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    document.querySelectorAll('.project-card, .timeline-item, .cert-item, .skill-category').forEach(el => {
         observer.observe(el);
     });
 
-    // Actualizar active state en navegación
+    // ========================================
+    // NAVEGACIÓN ACTIVA
+    // ========================================
     const sections = document.querySelectorAll('section[id]');
-    const navLinksAll = document.querySelectorAll('nav a');
 
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
 
-        navLinksAll.forEach(link => {
+        navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
@@ -106,74 +150,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Toggle Tema Claro/Oscuro
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = document.querySelector('.theme-icon');
-    
-    // Cargar tema guardado o usar el sistema
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    const currentTheme = savedTheme || systemTheme;
-    
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
-    
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
-    });
-
-console.log('✅ Portfolio loaded successfully!');
+    console.log('✅ Portfolio loaded successfully!');
 });
 
-// Funciones del modal de certificados (fuera del DOMContentLoaded)
-function openCertModal(title, institution, date, pdfUrl) {
-    const modal = document.getElementById('cert-modal');
-    const modalTitle = document.getElementById('modal-cert-title');
-    const modalInstitution = document.getElementById('modal-cert-institution');
-    const modalDate = document.getElementById('modal-cert-date');
-    const certPreview = document.getElementById('cert-preview');
-    const downloadBtn = document.getElementById('cert-download-btn');
-
-    // Actualizar información
-    modalTitle.textContent = title;
-    modalInstitution.textContent = institution;
-    modalDate.textContent = date;
-    
-    // Configurar preview y descarga
-    certPreview.src = pdfUrl;
-    downloadBtn.href = pdfUrl;
-    downloadBtn.download = `${title.replace(/\s+/g, '-')}.pdf`;
-
-    // Mostrar modal
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+// ========================================
+// CERTIFICADOS (Abrir en nueva pestaña)
+// ========================================
+function openCertModal(title, institution, date, pdfPath) {
+    console.log(`📄 Abriendo certificado: ${title}`);
+    window.open(pdfPath, '_blank');
 }
 
 function closeCertModal() {
     const modal = document.getElementById('cert-modal');
-    const certPreview = document.getElementById('cert-preview');
-    
-    modal.classList.remove('active');
-    certPreview.src = '';
-    document.body.style.overflow = 'auto';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
-// Cerrar modal con ESC
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeCertModal();
-    }
-});
-
-// Cerrar modal al hacer click fuera
-document.getElementById('cert-modal')?.addEventListener('click', (e) => {
-    if (e.target.id === 'cert-modal') {
-        closeCertModal();
-    }
-});
+console.log('✅ Portafolio cargado correctamente!');
 

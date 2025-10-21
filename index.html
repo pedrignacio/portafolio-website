@@ -29,35 +29,45 @@
     <link rel="manifest" href="./site.webmanifest">
 
     <link rel="stylesheet" href="./src/styles/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
     <!-- Barra de progreso de lectura -->
     <div class="reading-progress"></div>
     
     <header>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#certificaciones">Certificaciones</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <button class="theme-toggle" aria-label="Toggle theme">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#inicio">PSM</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+                    <li><a href="#certificaciones" class="nav-link">Certificaciones</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
                 <span class="theme-icon">🌙</span>
             </button>
-        </nav>
+        </div>
     </header>
 
     <!-- Overlay para cerrar menú -->
-    <div class="menu-overlay"></div>
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <main>
         <section id="inicio" class="hero-section">
@@ -152,6 +162,22 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <h3 class="timeline-title">Soporte TI (Práctica Laboral)</h3>
+                        <h4 class="timeline-company">Duoc UC - Cetecom</h4>
+                        <p class="timeline-date">Agosto 2024 - Diciembre 2024</p>
+                        <ul class="timeline-description">
+                            <li>Instalación y configuración de software, hardware y laboratorios</li>
+                            <li>Mantenimiento preventivo y correctivo de equipos</li>
+                            <li>Soporte directo a estudiantes y docentes</li>
+                            <li>Gestión de inventarios tecnológicos con sistemas de control</li>
+                            <li>Preparación logística para talleres y capacitaciones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
                         <h3 class="timeline-title">Gestor de Bodega</h3>
                         <h4 class="timeline-company">Salfa</h4>
                         <p class="timeline-date">Marzo 2019 - Noviembre 2019</p>
@@ -172,7 +198,7 @@
             <div class="certifications-grid">
                 <div class="cert-category">
                     <h3 class="cert-category-title">🎓 Educación Formal</h3>
-                    <div class="cert-item clickable" onclick="openCertModal('Ingeniería en Informática', 'Duoc UC', 'Julio 2025', './src/assets/docs/certificados/titulo-profesional.pdf')">
+                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Título Profesional', 'Duoc UC', 'Julio 2025', './src/assets/docs/certificados/titulo-profesional.pdf')">
                         <h4>Ingeniería en Informática</h4>
                         <p class="cert-institution">Duoc UC</p>
                         <p class="cert-date">Julio 2025</p>
@@ -191,11 +217,16 @@
                         <p class="cert-modules">Módulos: Programación de Software, Arquitectura de Software, Calidad de Software, Inteligencia de Negocios, Análisis y Desarrollo de Modelos de Datos</p>
                         <span class="cert-preview-icon">👁️ Ver certificado</span>
                     </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Técnico en Administración, Mención RR.HH.', 'Liceo Enrique Oyarzún Mondaca', '2021', './src/assets/docs/certificados/tecnico-admin.pdf')">
-                        <h4>Técnico en Administración, Mención RR.HH.</h4>
+                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Especialización', 'Duoc UC', 'Agosto 2025', './src/assets/docs/certificados/especializacion.pdf')">
+                        <h4>Certificado de Especialización</h4>
+                        <p class="cert-institution">Duoc UC</p>
+                        <p class="cert-date">Agosto 2025</p>
+                        <span class="cert-preview-icon">👁️ Ver certificado</span>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Técnico de Nivel Medio en Administración, Mención RR.HH.</h4>
                         <p class="cert-institution">Liceo Enrique Oyarzún Mondaca</p>
                         <p class="cert-date">2021</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
                     </div>
                 </div>
 
@@ -219,6 +250,18 @@
                         <p class="cert-date">Mayo 2025</p>
                         <span class="cert-preview-icon">👁️ Ver certificado</span>
                     </div>
+                    <div class="cert-item clickable" onclick="openCertModal('Artificial Intelligence Expert Certificate CAIEC®', 'Certiprof®', 'Octubre 2025', './src/assets/docs/certificados/Certificate-PedroIgnacio-SanMartinCarrasco.pdf')">
+                        <h4>Artificial Intelligence Expert Certificate CAIEC®</h4>
+                        <p class="cert-institution">Certiprof®</p>
+                        <p class="cert-date">Octubre 2025</p>
+                        <span class="cert-preview-icon">👁️ Ver certificado</span>
+                    </div>
+                    <div class="cert-item clickable" onclick="openCertModal('Intro to Programming', 'Kaggle', '2024', './src/assets/docs/certificados/intro-programming.pdf')">
+                        <h4>Intro to Programming</h4>
+                        <p class="cert-institution">Kaggle</p>
+                        <p class="cert-date">2024</p>
+                        <span class="cert-preview-icon">👁️ Ver certificado</span>
+                    </div>
                 </div>
 
                 <div class="cert-category">
@@ -229,19 +272,19 @@
                         <p class="cert-date">Junio 2023</p>
                         <span class="cert-preview-icon">👁️ Ver certificado</span>
                     </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Gestión de Proyectos TI', 'Duoc UC', 'Agosto 2025', './src/assets/docs/certificados/gestion-proyectos.pdf')">
-                        <h4>Gestión de Proyectos TI</h4>
-                        <p class="cert-institution">Duoc UC</p>
-                        <p class="cert-date">Agosto 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
                 </div>
 
                 <div class="cert-category">
-                    <h3 class="cert-category-title">🔒 Seguridad</h3>
-                    <div class="cert-item clickable" onclick="openCertModal('ISO 27001 - Seguridad de la Información', 'SEGURIDAD CERO', 'Septiembre 2025', './src/assets/docs/certificados/iso-27001.pdf')">
+                    <h3 class="cert-category-title">🔒 Seguridad y Certificación Digital</h3>
+                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Inducción Hospital Regional', 'Hospital Clínico Regional de Concepción Dr. Guillermo Grant Benavente', 'Octubre 2025', './src/assets/docs/certificados/induccion-certinet.pdf')">
+                        <h4>Certificado de Inducción</h4>
+                        <p class="cert-institution">Hospital Clínico Regional de Concepción Dr. Guillermo Grant Benavente</p>
+                        <p class="cert-date">Agosto 2025</p>
+                        <span class="cert-preview-icon">👁️ Ver certificado</span>
+                    </div>
+                    <div class="cert-item clickable" onclick="openCertModal('ISO 27001 - Seguridad de la Información', 'Certificación Digital', 'Septiembre 2025', './src/assets/docs/certificados/iso-27001.pdf')">
                         <h4>ISO 27001 - Seguridad de la Información</h4>
-                        <p class="cert-institution">SEGURIDAD CERO</p>
+                        <p class="cert-institution">Certificación Digital</p>
                         <p class="cert-date">Septiembre 2025</p>
                         <span class="cert-preview-icon">👁️ Ver certificado</span>
                     </div>
@@ -261,7 +304,15 @@
                     <button class="cert-modal-close" onclick="closeCertModal()">✕</button>
                 </div>
                 <div class="cert-modal-body">
-                    <iframe id="cert-preview" src="" frameborder="0"></iframe>
+                    <iframe 
+                        id="cert-preview" 
+                        src="about:blank" 
+                        title="Vista previa del certificado en formato PDF"
+                        aria-label="Visor de documento PDF del certificado seleccionado"
+                        loading="lazy"
+                        allow="fullscreen"
+                        sandbox="allow-same-origin allow-scripts"
+                    ></iframe>
                 </div>
                 <div class="cert-modal-footer">
                     <a id="cert-download-btn" href="" download class="btn-primary">
@@ -429,15 +480,7 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Pedro San Martín. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- Botón volver arriba -->
-    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
-        <span>↑</span>
-    </button>
-
+    <!-- Script JavaScript -->
     <script src="./src/scripts/main.js"></script>
 </body>
 </html>
