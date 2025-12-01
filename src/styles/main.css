@@ -387,7 +387,7 @@ main {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
 }
@@ -401,6 +401,188 @@ main {
 
 .about-image:hover {
     transform: scale(1.05);
+}
+
+/* Code Window */
+.about-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-window {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+
+.code-window-header {
+    background-color: #1e1e1e;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.code-window-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    background-color: #ff5f56;
+}
+
+.dot-yellow {
+    background-color: #ffbd2e;
+}
+
+.dot-green {
+    background-color: #27c93f;
+}
+
+.code-filename {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+
+.code-content {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #1e1e1e;
+    overflow-x: auto;
+}
+
+.code-content code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    display: block;
+}
+
+.code-content code .keyword {
+    color: #c586c0;
+}
+
+.code-content code .string {
+    color: #ce9178;
+}
+
+.code-content code .property {
+    color: #9cdcfe;
+}
+
+/* Principles Section */
+.principles-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.principle-card {
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+}
+
+.principle-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--accent), #2196f3);
+    border-radius: 4px 0 0 4px;
+}
+
+.principle-title {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.principle-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Development Areas Section */
+.development-areas-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.area-card {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+    border-color: var(--accent);
+}
+
+.area-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.area-title {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.area-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .skills-grid {
@@ -1370,6 +1552,22 @@ nav a.active::after {
 
     .project-links {
         flex-direction: column;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .code-window {
+        max-width: 100%;
+    }
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
     }
 
     .project-links .project-link {

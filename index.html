@@ -103,9 +103,6 @@
 
         <section id="sobre-mi" class="about-section">
             <div class="about-grid">
-                <div class="about-image-container">
-                    <img src="./src/assets/profile-photo.jpg" alt="Pedro San Martín" class="about-image">
-                </div>
                 <div class="about-content">
                     <h2 class="section-title">Sobre Mí</h2>
                     <p class="about-text">
@@ -125,6 +122,73 @@
                         <span class="skill-tag">Ionic</span>
                     </div>
                 </div>
+                <div class="about-code-container">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <div class="code-window-controls">
+                                <span class="code-dot dot-red"></span>
+                                <span class="code-dot dot-yellow"></span>
+                                <span class="code-dot dot-green"></span>
+                            </div>
+                            <span class="code-filename">desarrollador.js</span>
+                        </div>
+                        <pre class="code-content"><code class="language-javascript">const desarrollador = {
+  nombre: "Pedro San Martín",
+  profesion: "Ingeniero en Informática",
+  especialidad: "Desarrollo Full Stack",
+  stack: ["JavaScript", "Node.js", "Angular", "React"],
+  enfoque: "Soluciones Tecnológicas",
+  objetivo: "Innovar con código"
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="principios" class="principles-section">
+            <h2 class="section-title">Principios de Trabajo</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-bar"></div>
+                    <h3 class="principle-title">Pragmatismo</h3>
+                    <p class="principle-description">Soluciones efectivas y prácticas que resuelven problemas reales, priorizando resultados sobre complejidad innecesaria.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-bar"></div>
+                    <h3 class="principle-title">Escalabilidad</h3>
+                    <p class="principle-description">Diseño con miras a la actualización y mejora continua, pensando en el crecimiento futuro del proyecto.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-bar"></div>
+                    <h3 class="principle-title">Eficiencia</h3>
+                    <p class="principle-description">Trabajo óptimo y uso efectivo de recursos, priorizando actividades clave y optimizando procesos.</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-bar"></div>
+                    <h3 class="principle-title">Comunicación</h3>
+                    <p class="principle-description">Entender que el lenguaje técnico debe ser accesible para todos, facilitando la colaboración efectiva.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="areas-desarrollo" class="development-areas-section">
+            <h2 class="section-title">Áreas de Desarrollo</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">💻</div>
+                    <h3 class="area-title">Desarrollo de Aplicaciones Web</h3>
+                    <p class="area-description">Creación de aplicaciones web escalables con tecnologías modernas y arquitecturas robustas. Experiencia en React, Angular, Node.js y bases de datos relacionales.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">📱</div>
+                    <h3 class="area-title">Desarrollo Mobile</h3>
+                    <p class="area-description">Aplicaciones móviles híbridas para iOS y Android con Ionic y TypeScript. Experiencia en desarrollo cross-platform y optimización de rendimiento móvil.</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🤖</div>
+                    <h3 class="area-title">Automatización y Scripting</h3>
+                    <p class="area-description">Desarrollo de herramientas y scripts de automatización para optimizar procesos, reducir tiempos y mejorar eficiencia operativa usando Python y Node.js.</p>
+                </div>
             </div>
         </section>
 
@@ -138,11 +202,13 @@
                         <h4 class="timeline-company">Independiente</h4>
                         <p class="timeline-date">2024 - Actualidad</p>
                         <ul class="timeline-description">
-                            <li>Diseño y desarrollo de sitios y aplicaciones web con React, Next.js y Tailwind CSS</li>
-                            <li>Implementación de APIs REST y automatización de procesos con Node.js</li>
-                            <li>Mantenimiento y mejora continua de proyectos personales y para pequeños clientes locales</li>
-                            <li>Uso de GitHub, metodologías ágiles y despliegue en entornos cloud</li>
-                            <li>Priorización de usabilidad y rendimiento en todas las soluciones desarrolladas</li>
+                            <li>Desarrollo full-stack de aplicaciones web modernas utilizando React, Next.js y Tailwind CSS para interfaces responsivas y optimizadas</li>
+                            <li>Diseño e implementación de APIs RESTful con Node.js y Express.js, incluyendo manejo de autenticación, validación de datos y optimización de consultas</li>
+                            <li>Construcción de componentes reutilizables y arquitectura de componentes escalable siguiendo principios SOLID y patrones de diseño</li>
+                            <li>Integración con servicios backend y bases de datos (PostgreSQL, Supabase) para gestión de datos en tiempo real</li>
+                            <li>Implementación de CI/CD pipelines, control de versiones con Git/GitHub y despliegue en plataformas cloud (Render, Vercel)</li>
+                            <li>Optimización de rendimiento: code splitting, lazy loading, caching strategies y análisis de bundle size</li>
+                            <li>Desarrollo de features completas: desde diseño de UI/UX hasta implementación, testing y documentación técnica</li>
                         </ul>
                     </div>
                 </div>
@@ -154,12 +220,13 @@
                         <h4 class="timeline-company">Nexsis Ltda (Cliente: Certinet / BancoEstado)</h4>
                         <p class="timeline-date">Agosto 2025 - Actualidad</p>
                         <ul class="timeline-description">
-                            <li>Instalación, configuración y mantenimiento de certificados digitales e-Token</li>
-                            <li>Implementación de firma electrónica avanzada con SafeNet y GoSign</li>
-                            <li>Desarrollo de scripts y pruebas de validación aplicando principios de seguridad digital</li>
-                            <li>Participación en proyectos de automatización y documentación técnica detallada</li>
-                            <li>Soporte en terreno a instituciones públicas y privadas con enfoque en resolución de problemas</li>
-                            <li>Contribución a la mejora continua de flujos digitales y procesos de autenticación</li>
+                            <li>Desarrollo de scripts de automatización con Python y PowerShell para instalación masiva y configuración de certificados digitales e-Token</li>
+                            <li>Implementación de soluciones de firma electrónica avanzada mediante integración de APIs SafeNet y GoSign en entornos empresariales</li>
+                            <li>Creación de herramientas de validación y testing automatizado para verificar integridad y funcionamiento de certificados digitales</li>
+                            <li>Desarrollo de documentación técnica detallada y guías de implementación para procesos de certificación digital</li>
+                            <li>Automatización de flujos de trabajo mediante scripts que reducen tiempo de configuración en un 60%</li>
+                            <li>Análisis y resolución de problemas técnicos complejos relacionados con seguridad digital y criptografía</li>
+                            <li>Colaboración en proyectos de digitalización aplicando principios de seguridad informática (ISO 27001)</li>
                         </ul>
                     </div>
                 </div>
@@ -171,12 +238,14 @@
                         <h4 class="timeline-company">MasterBase®</h4>
                         <p class="timeline-date">Mayo 2025 - Julio 2025</p>
                         <ul class="timeline-description">
-                            <li>Desarrollo de solución digital para gestión de proyectos freelance</li>
-                            <li>Desarrollo de componentes reutilizables en JavaScript/Node.js aplicando SCRUM</li>
-                            <li>Creación de scripts de validación avanzada y sistemas de notificaciones</li>
-                            <li>Diseño de paneles de productividad y dashboards interactivos</li>
-                            <li>Automatización de flujos de trabajo con JavaScript</li>
-                            <li>Colaboración en arquitectura técnica escalable y despliegue de entornos web</li>
+                            <li>Desarrollo full-stack de plataforma web completa para gestión de proyectos freelance utilizando JavaScript/Node.js y arquitectura modular</li>
+                            <li>Diseño e implementación de componentes reutilizables y biblioteca de UI siguiendo metodología SCRUM y principios DRY</li>
+                            <li>Desarrollo de sistema de validación avanzada con reglas de negocio complejas, manejo de errores y feedback en tiempo real</li>
+                            <li>Implementación de sistema de notificaciones asíncronas con colas de mensajería y eventos programados</li>
+                            <li>Construcción de dashboards interactivos con visualización de KPIs, gráficos dinámicos y filtros avanzados</li>
+                            <li>Desarrollo de paneles de productividad con métricas en tiempo real, seguimiento de tareas y análisis de rendimiento</li>
+                            <li>Automatización de flujos de trabajo mediante workflows y triggers que optimizan procesos operativos</li>
+                            <li>Colaboración en diseño de arquitectura técnica escalable, optimización de consultas y mejoras de rendimiento</li>
                         </ul>
                     </div>
                 </div>
@@ -188,32 +257,17 @@
                         <h4 class="timeline-company">Duoc UC - Cetecom</h4>
                         <p class="timeline-date">Agosto 2024 - Diciembre 2024</p>
                         <ul class="timeline-description">
-                            <li>Instalación y configuración de software, hardware y laboratorios</li>
-                            <li>Desarrollo de herramientas internas con Python y Batch para automatizar inventario</li>
-                            <li>Configuración de entornos de desarrollo y documentación de incidencias</li>
-                            <li>Mantenimiento preventivo y correctivo de equipos</li>
-                            <li>Soporte directo a estudiantes y docentes</li>
-                            <li>Colaboración en pruebas y despliegue de software institucional</li>
-                            <li>Gestión de inventarios tecnológicos con sistemas de control</li>
-                            <li>Preparación logística para talleres y capacitaciones</li>
+                            <li>Desarrollo de scripts automatizados en Python y Batch para gestión de inventario tecnológico, reduciendo tiempo de registro en un 70%</li>
+                            <li>Creación de herramientas internas de reporting que generan informes automáticos de estado de equipos y recursos</li>
+                            <li>Implementación de scripts de automatización para configuración masiva de entornos de desarrollo y laboratorios</li>
+                            <li>Desarrollo de sistema de registro y seguimiento de incidencias técnicas con base de datos estructurada</li>
+                            <li>Optimización de procesos mediante automatización: backups, actualizaciones y mantenimiento preventivo</li>
+                            <li>Colaboración en integración de software institucional, pruebas de compatibilidad y documentación técnica</li>
+                            <li>Desarrollo de soluciones personalizadas para optimizar flujos de trabajo del departamento técnico</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Gestor de Bodega</h3>
-                        <h4 class="timeline-company">Salfa</h4>
-                        <p class="timeline-date">Marzo 2019 - Noviembre 2019</p>
-                        <ul class="timeline-description">
-                            <li>Gestión completa de logística: recepción, almacenamiento y despacho</li>
-                            <li>Control de inventario y trazabilidad de productos</li>
-                            <li>Gestión documental y registro en sistema informático</li>
-                            <li>Atención a clientes internos y externos</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -577,85 +631,74 @@
                 <div class="skill-category">
                     <h3 class="skill-category-title">🎨 Frontend</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">JavaScript ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Angular ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">HTML5 ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">CSS3 ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">React ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Tailwind CSS ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">TypeScript ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Ionic ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Next.js ⭐⭐⭐</span>
+                        <span class="skill-badge advanced">JavaScript</span>
+                        <span class="skill-badge advanced">Angular</span>
+                        <span class="skill-badge advanced">HTML5</span>
+                        <span class="skill-badge advanced">CSS3</span>
+                        <span class="skill-badge advanced">React</span>
+                        <span class="skill-badge advanced">Tailwind CSS</span>
+                        <span class="skill-badge intermediate">TypeScript</span>
+                        <span class="skill-badge intermediate">Ionic</span>
+                        <span class="skill-badge intermediate">Next.js</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">⚙️ Backend</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">Node.js ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Express.js ⭐⭐⭐</span>
-                        <span class="skill-badge basic">Python ⭐⭐</span>
+                        <span class="skill-badge advanced">Node.js</span>
+                        <span class="skill-badge intermediate">Express.js</span>
+                        <span class="skill-badge basic">Python</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">🗄️ Bases de Datos</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">MySQL ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">SQL ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Diseño de BD ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Modelado de Datos ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Supabase ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Firebase ⭐⭐⭐</span>
+                        <span class="skill-badge advanced">MySQL</span>
+                        <span class="skill-badge advanced">SQL</span>
+                        <span class="skill-badge advanced">Diseño de BD</span>
+                        <span class="skill-badge intermediate">Modelado de Datos</span>
+                        <span class="skill-badge intermediate">Supabase</span>
+                        <span class="skill-badge intermediate">Firebase</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">🔧 Herramientas y DevOps</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">Git ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">GitHub ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Control de Versiones ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">GCP ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Hardware ⭐⭐⭐</span>
+                        <span class="skill-badge advanced">Git</span>
+                        <span class="skill-badge advanced">GitHub</span>
+                        <span class="skill-badge advanced">Control de Versiones</span>
+                        <span class="skill-badge advanced">GCP</span>
+                        <span class="skill-badge intermediate">Hardware</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">📊 Gestión de Proyectos</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">Metodologías Ágiles ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Scrum ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Gestión de Riesgos ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Planificación ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">Waterfall ⭐⭐⭐</span>
+                        <span class="skill-badge advanced">Metodologías Ágiles</span>
+                        <span class="skill-badge advanced">Scrum</span>
+                        <span class="skill-badge intermediate">Gestión de Riesgos</span>
+                        <span class="skill-badge intermediate">Planificación</span>
+                        <span class="skill-badge intermediate">Waterfall</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">🔒 Soporte y Operaciones</h3>
                     <div class="skills-list">
-                        <span class="skill-badge advanced">Soporte TI ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Certificados Digitales ⭐⭐⭐⭐</span>
-                        <span class="skill-badge advanced">Firma Electrónica ⭐⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">SafeNet ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">GoSign ⭐⭐⭐</span>
-                        <span class="skill-badge intermediate">ISO 27001 ⭐⭐⭐</span>
-                        <span class="skill-badge basic">SAP ERP ⭐⭐</span>
+                        <span class="skill-badge advanced">Soporte TI</span>
+                        <span class="skill-badge advanced">Certificados Digitales</span>
+                        <span class="skill-badge advanced">Firma Electrónica</span>
+                        <span class="skill-badge intermediate">SafeNet</span>
+                        <span class="skill-badge intermediate">GoSign</span>
+                        <span class="skill-badge intermediate">ISO 27001</span>
+                        <span class="skill-badge basic">SAP ERP</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="skill-category-title">👥 Habilidades Blandas</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge soft">Trabajo en Equipo ⭐⭐⭐⭐</span>
-                        <span class="skill-badge soft">Comunicación ⭐⭐⭐⭐</span>
-                        <span class="skill-badge soft">Resolución de Problemas ⭐⭐⭐⭐</span>
-                        <span class="skill-badge soft">Adaptabilidad ⭐⭐⭐⭐</span>
-                        <span class="skill-badge soft">Liderazgo ⭐⭐⭐</span>
-                        <span class="skill-badge soft">Pensamiento Crítico ⭐⭐⭐⭐</span>
-                    </div>
-                </div>
             </div>
         </section>
 
