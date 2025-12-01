@@ -1233,7 +1233,7 @@ main {
 }
 
 .skill-category-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1242,6 +1242,11 @@ main {
     background: linear-gradient(135deg, var(--accent), #2196f3);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+    color: var(--text-primary);
+}
+
+.skill-category-icon i {
+    font-size: inherit;
 }
 
 .skill-category-title {
@@ -1356,9 +1361,16 @@ main {
 .tool-icon {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
+    color: var(--accent);
+}
+
+.tool-icon i {
+    font-size: inherit;
 }
 
 .tool-item:hover .tool-icon {
@@ -1692,6 +1704,86 @@ nav a.active::after {
 /* Animaciones de scroll */
 .fade-in {
     animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent), #2196f3);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(74, 158, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(74, 158, 255, 0.6);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* Lazy Loading Images */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Print Styles */
+@media print {
+    header,
+    .scroll-to-top,
+    .theme-toggle,
+    .menu-toggle,
+    nav {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .section-title {
+        color: #333;
+        page-break-after: avoid;
+    }
+
+    .project-card,
+    .timeline-item,
+    .cert-item {
+        page-break-inside: avoid;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
 }
 
 /* Responsive Design */
