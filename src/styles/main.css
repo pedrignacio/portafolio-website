@@ -1264,6 +1264,15 @@ main {
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: default;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-icon {
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Skill levels */
@@ -1311,6 +1320,56 @@ main {
 .skill-badge.soft:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+
+/* Tools Section */
+.tools-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tool-item {
+    background-color: var(--bg-secondary);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.tool-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.4);
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--bg-secondary), rgba(74, 158, 255, 0.1));
+}
+
+.tool-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.tool-item:hover .tool-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.tool-name {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* Contact Section */
@@ -1770,6 +1829,23 @@ nav a.active::after {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .tool-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .tool-icon {
+        font-size: 2.5rem;
+    }
+
+    .tool-name {
+        font-size: 0.95rem;
     }
 
     .project-links .project-link {
