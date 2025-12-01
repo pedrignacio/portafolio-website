@@ -150,6 +150,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ========================================
+    // FORMULARIO DE CONTACTO
+    // ========================================
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Crear asunto del correo
+            const subjectMap = {
+                'proyecto': 'Nuevo Proyecto',
+                'colaboracion': 'Colaboración',
+                'consulta': 'Consulta General',
+                'otro': 'Otro'
+            };
+            const emailSubject = subjectMap[subject] || 'Consulta desde Portfolio';
+            
+            // Crear cuerpo del correo
+            let emailBody = `Hola Pedro,\n\n`;
+            emailBody += `Mi nombre es: ${name}\n`;
+            emailBody += `Email: ${email}\n`;
+            if (phone) {
+                emailBody += `Teléfono: ${phone}\n`;
+            }
+            emailBody += `\nMensaje:\n${message}`;
+            
+            // Crear enlace mailto
+            const mailtoLink = `mailto:psanmartincarrasco@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Abrir cliente de correo
+            window.location.href = mailtoLink;
+            
+            // Mostrar mensaje de éxito
+            setTimeout(() => {
+                alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo. Si no se abre automáticamente, puedes enviar un correo a psanmartincarrasco@gmail.com');
+                contactForm.reset();
+            }, 100);
+        });
+    }
+
     console.log('✅ Portfolio loaded successfully!');
 });
 
