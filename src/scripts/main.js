@@ -1,8 +1,14 @@
 // Main JavaScript file for the portfolio webpage
 
-console.log('🚀 Cargando portafolio...');
-
 document.addEventListener('DOMContentLoaded', () => {
+    // ========================================
+    // AÑO ACTUAL EN FOOTER (si existe)
+    // ========================================
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+    }
+
     // ========================================
     // MENÚ MÓVIL
     // ========================================
@@ -15,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && nav && menuOverlay) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            console.log('🍔 Toggle menú');
             nav.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             menuToggle.classList.toggle('active');
@@ -24,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Cerrar menú al hacer clic en el overlay
         menuOverlay.addEventListener('click', () => {
-            console.log('❌ Cerrar menú (overlay)');
             nav.classList.remove('active');
             menuOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
@@ -34,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cerrar menú al hacer clic en un enlace
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                console.log('❌ Cerrar menú (link)');
                 nav.classList.remove('active');
                 menuOverlay.classList.remove('active');
                 menuToggle.classList.remove('active');
@@ -62,8 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
     }
 
-    console.log(`🎨 Tema inicial: ${currentTheme}`);
-
     // Toggle tema al hacer clic
     if (themeToggle && themeIcon) {
         themeToggle.addEventListener('click', () => {
@@ -73,8 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
-            
-            console.log(`🎨 Tema cambiado a: ${newTheme}`);
         });
     }
 
@@ -129,26 +128,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // NAVEGACIÓN ACTIVA
+    // NAVEGACIÓN ACTIVA (Multipágina)
+    // - Si hay secciones con hash (#), se mantiene soporte.
+    // - Si no, se marca activo por pathname (about.html, etc.).
     // ========================================
-    const sections = document.querySelectorAll('section[id]');
+    const normalizePath = (path) => {
+        if (!path || path === '/') return '/index.html';
+        return path.endsWith('/') ? `${path}index.html` : path;
+    };
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
+    const currentPath = normalizePath(window.location.pathname);
+    const currentHash = window.location.hash;
 
+    const setActiveNavLink = () => {
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
+            link.removeAttribute('aria-current');
+        });
+
+        // Prefer hash match (single-page sections), if any.
+        if (currentHash) {
+            const hashMatch = Array.from(navLinks).find((link) => link.getAttribute('href') === currentHash);
+            if (hashMatch) {
+                hashMatch.classList.add('active');
+                hashMatch.setAttribute('aria-current', 'page');
+                return;
+            }
+        }
+
+        // Fallback: match pathname.
+        const pageMatch = Array.from(navLinks).find((link) => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#')) return false;
+            try {
+                const url = new URL(href, window.location.href);
+                return normalizePath(url.pathname) === currentPath;
+            } catch {
+                return false;
             }
         });
-    });
+
+        if (pageMatch) {
+            pageMatch.classList.add('active');
+            pageMatch.setAttribute('aria-current', 'page');
+        }
+    };
+
+    setActiveNavLink();
+
+    // Si existen secciones con id y nav con hashes, también se actualiza por scroll.
+    const sections = document.querySelectorAll('section[id]');
+    const hasHashNav = Array.from(navLinks).some((link) => (link.getAttribute('href') || '').startsWith('#'));
+
+    if (sections.length > 0 && hasHashNav) {
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        });
+    }
 
     // ========================================
     // FORMULARIO DE CONTACTO
@@ -253,7 +304,37 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========================================
 function openCertModal(title, institution, date, pdfPath) {
     console.log(`📄 Abriendo certificado: ${title}`);
-    window.open(pdfPath, '_blank');
+
+    const modal = document.getElementById('cert-modal');
+    const titleEl = document.getElementById('modal-cert-title');
+    const institutionEl = document.getElementById('modal-cert-institution');
+    const dateEl = document.getElementById('modal-cert-date');
+    const iframe = document.getElementById('cert-preview');
+    const downloadBtn = document.getElementById('cert-download-btn');
+
+    if (!modal || !iframe || !downloadBtn) {
+        window.open(pdfPath, '_blank');
+        return;
+    }
+
+    if (titleEl) titleEl.textContent = title;
+    if (institutionEl) institutionEl.textContent = institution;
+    if (dateEl) dateEl.textContent = date;
+
+    iframe.src = pdfPath;
+    downloadBtn.href = pdfPath;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    if (!modal.dataset.backdropBound) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeCertModal();
+            }
+        });
+        modal.dataset.backdropBound = 'true';
+    }
 }
 
 function closeCertModal() {
@@ -261,8 +342,19 @@ function closeCertModal() {
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+
+        const iframe = document.getElementById('cert-preview');
+        if (iframe) {
+            iframe.src = 'about:blank';
+        }
     }
 }
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCertModal();
+    }
+});
 
 console.log('✅ Portafolio cargado correctamente!');
 

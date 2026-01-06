@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e27"/>
+      <stop offset="1" stop-color="#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a9eff"/>
+      <stop offset="1" stop-color="#2196f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect x="70" y="80" width="1060" height="540" rx="20" fill="#111827" opacity="0.35"/>
+  <rect x="70" y="80" width="6" height="540" fill="url(#accent)"/>
+  <text x="120" y="200" fill="#e0e0e0" font-size="54" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="700">Plataforma de Gestión Freelance</text>
+  <text x="120" y="265" fill="#a0a0a0" font-size="26" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">Automatización • Dashboards • Productividad</text>
+  <g opacity="0.9" fill="#4a9eff">
+    <path d="M170 460c0-55 45-100 100-100h120c55 0 100 45 100 100v20H170v-20zm28 0h264c-9.5-39-44.7-68-86-68H284c-41.3 0-76.5 29-86 68z"/>
+    <circle cx="320" cy="310" r="46"/>
+    <path d="M720 505h260v-34H720v34zm0-80h350v-34H720v34zm0-80h300v-34H720v34z"/>
+  </g>
+</svg>

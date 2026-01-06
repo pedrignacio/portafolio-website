@@ -6,33 +6,73 @@
     <meta name="description" content="Portafolio de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic">
     <meta name="keywords" content="desarrollador, full stack, Node.js, Angular, Ionic, portafolio">
     <meta name="author" content="Pedro San Martín">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0a0e27">
     <title>Pedro San Martín | Desarrollador Full Stack</title>
+
+    <link rel="canonical" href="https://pedrignacio.github.io/portafolio-website/">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pedrignacio.github.io/portafolio-website/">
     <meta property="og:title" content="Pedro San Martín | Desarrollador Full Stack">
     <meta property="og:description" content="Portafolio profesional de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic. Proyectos, experiencia y certificaciones.">
-    <meta property="og:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
+    <meta property="og:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.svg">
+    <meta property="og:site_name" content="Pedro San Martín">
+    <meta property="og:locale" content="es_CL">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pedrignacio.github.io/portafolio-website/">
     <meta property="twitter:title" content="Pedro San Martín | Desarrollador Full Stack">
     <meta property="twitter:description" content="Portafolio profesional de Pedro San Martín - Desarrollador Full Stack especializado en Node.js, Angular e Ionic.">
-    <meta property="twitter:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.jpg">
+    <meta property="twitter:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/preview.svg">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "name": "Portafolio — Pedro San Martín",
+                    "url": "https://pedrignacio.github.io/portafolio-website/",
+                    "inLanguage": "es-CL"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Pedro San Martín",
+                    "url": "https://pedrignacio.github.io/portafolio-website/",
+                    "jobTitle": "Desarrollador Full Stack",
+                    "sameAs": [
+                        "https://github.com/pedrignacio",
+                        "https://www.linkedin.com/in/pedroignaciosanmartincarrasco/"
+                    ],
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Hualpén",
+                        "addressRegion": "Bío-Bío",
+                        "addressCountry": "CL"
+                    }
+                }
+            ]
+        }
+        </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/apple-touch-icon.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <link rel="icon" href="./src/assets/favicon.svg" type="image/svg+xml">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Devicon (tech stack icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <link rel="stylesheet" href="./src/styles/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
     <!-- Barra de progreso de lectura -->
@@ -41,7 +81,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="#inicio">PSM</a>
+                <a href="./index.html#inicio">PSM</a>
             </div>
             
             <button class="menu-toggle" aria-label="Toggle menu" id="menu-toggle">
@@ -52,14 +92,15 @@
 
             <nav id="main-nav">
                 <ul>
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
-                    <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
-                    <li><a href="#certificaciones" class="nav-link">Certificaciones</a></li>
-                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                    <li><a href="#herramientas" class="nav-link">Herramientas</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="./index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="./about.html" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="./experience.html" class="nav-link">Experiencia</a></li>
+                    <li><a href="./certifications.html" class="nav-link">Certificaciones</a></li>
+                    <li><a href="./projects.html" class="nav-link">Proyectos</a></li>
+                    <li><a href="./services.html" class="nav-link">Servicios</a></li>
+                    <li><a href="./skills.html" class="nav-link">Habilidades</a></li>
+                    <li><a href="./tools.html" class="nav-link">Herramientas</a></li>
+                    <li><a href="./contact.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
 
@@ -98,775 +139,18 @@
                     Apasionado por crear experiencias digitales excepcionales. Con fortaleza en frontend y experiencia en desarrollo full stack, busco participar en proyectos desafiantes donde pueda aportar mi proactividad y constante aprendizaje.
                 </p>
                 
+                <div class="hero-buttons">
+                    <a class="btn-outline" href="./projects.html">Ver Proyectos</a>
+                    <a class="btn-outline" href="./experience.html">Ver Experiencia</a>
+                    <a class="btn-outline" href="./contact.html">Contactar</a>
+                </div>
 
                 </div>
             
             
         </section>
 
-        <section id="sobre-mi" class="about-section">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">Sobre Mí</h2>
-                    <p class="about-text">
-                        Ingeniero en Informática con experiencia práctica en desarrollo full stack y especialización en frontend. Mi enfoque proactivo me ha permitido destacar en proyectos diversos, desde sistemas de gestión empresarial hasta plataformas e-commerce. Siempre busco nuevos desafíos tecnológicos y oportunidades para contribuir en equipos innovadores que impulsen soluciones digitales de calidad.
-                    </p>
-                    <p class="about-text">
-                        Con experiencia en soporte técnico especializado y automatización de procesos, combino habilidades técnicas sólidas con una mentalidad de mejora continua. Mi objetivo es seguir creciendo profesionalmente en roles que me permitan aplicar mi pasión por el desarrollo frontend y mi capacidad de adaptación a nuevas tecnologías.
-                    </p>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Ionic</span>
-                    </div>
-                </div>
-                <div class="about-code-container">
-                    <div class="code-window">
-                        <div class="code-window-header">
-                            <div class="code-window-controls">
-                                <span class="code-dot dot-red"></span>
-                                <span class="code-dot dot-yellow"></span>
-                                <span class="code-dot dot-green"></span>
-                            </div>
-                            <span class="code-filename">desarrollador.js</span>
-                        </div>
-                        <pre class="code-content"><code class="language-javascript">const desarrollador = {
-  nombre: "Pedro San Martín",
-  profesion: "Ingeniero en Informática",
-  especialidad: "Desarrollo Full Stack",
-  stack: ["JavaScript", "Node.js", "Angular", "React"],
-  enfoque: "Soluciones Tecnológicas",
-  objetivo: "Innovar con código"
-};</code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="principios" class="principles-section">
-            <h2 class="section-title">Principios de Trabajo</h2>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="principle-bar"></div>
-                    <h3 class="principle-title">Pragmatismo</h3>
-                    <p class="principle-description">Soluciones efectivas y prácticas que resuelven problemas reales, priorizando resultados sobre complejidad innecesaria.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-bar"></div>
-                    <h3 class="principle-title">Escalabilidad</h3>
-                    <p class="principle-description">Diseño con miras a la actualización y mejora continua, pensando en el crecimiento futuro del proyecto.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-bar"></div>
-                    <h3 class="principle-title">Eficiencia</h3>
-                    <p class="principle-description">Trabajo óptimo y uso efectivo de recursos, priorizando actividades clave y optimizando procesos.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="principle-bar"></div>
-                    <h3 class="principle-title">Comunicación</h3>
-                    <p class="principle-description">Entender que el lenguaje técnico debe ser accesible para todos, facilitando la colaboración efectiva.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="areas-desarrollo" class="development-areas-section">
-            <h2 class="section-title">Áreas de Desarrollo</h2>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <div class="area-icon">💻</div>
-                    <h3 class="area-title">Desarrollo de Aplicaciones Web</h3>
-                    <p class="area-description">Creación de aplicaciones web escalables con tecnologías modernas y arquitecturas robustas. Experiencia en React, Angular, Node.js y bases de datos relacionales.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon">📱</div>
-                    <h3 class="area-title">Desarrollo Mobile</h3>
-                    <p class="area-description">Aplicaciones móviles híbridas para iOS y Android con Ionic y TypeScript. Experiencia en desarrollo cross-platform y optimización de rendimiento móvil.</p>
-                </div>
-                <div class="area-card">
-                    <div class="area-icon">🤖</div>
-                    <h3 class="area-title">Automatización y Scripting</h3>
-                    <p class="area-description">Desarrollo de herramientas y scripts de automatización para optimizar procesos, reducir tiempos y mejorar eficiencia operativa usando Python y Node.js.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiencia" class="experience-section">
-            <h2 class="section-title">Experiencia Profesional</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Desarrollador Freelancer</h3>
-                        <h4 class="timeline-company">Independiente</h4>
-                        <p class="timeline-date">2024 - Actualidad</p>
-                        <ul class="timeline-description">
-                            <li>Desarrollo full-stack de aplicaciones web modernas utilizando React, Next.js y Tailwind CSS para interfaces responsivas y optimizadas</li>
-                            <li>Diseño e implementación de APIs RESTful con Node.js y Express.js, incluyendo manejo de autenticación, validación de datos y optimización de consultas</li>
-                            <li>Construcción de componentes reutilizables y arquitectura de componentes escalable siguiendo principios SOLID y patrones de diseño</li>
-                            <li>Integración con servicios backend y bases de datos (PostgreSQL, Supabase) para gestión de datos en tiempo real</li>
-                            <li>Implementación de CI/CD pipelines, control de versiones con Git/GitHub y despliegue en plataformas cloud (Render, Vercel)</li>
-                            <li>Optimización de rendimiento: code splitting, lazy loading, caching strategies y análisis de bundle size</li>
-                            <li>Desarrollo de features completas: desde diseño de UI/UX hasta implementación, testing y documentación técnica</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Especialista en Soporte TI en terreno</h3>
-                        <h4 class="timeline-company">Nexsis Ltda (Cliente: Certinet / BancoEstado)</h4>
-                        <p class="timeline-date">Agosto 2025 - Actualidad</p>
-                        <ul class="timeline-description">
-                            <li>Desarrollo de scripts de automatización con Python y PowerShell para instalación masiva y configuración de certificados digitales e-Token</li>
-                            <li>Implementación de soluciones de firma electrónica avanzada mediante integración de APIs SafeNet y GoSign en entornos empresariales</li>
-                            <li>Creación de herramientas de validación y testing automatizado para verificar integridad y funcionamiento de certificados digitales</li>
-                            <li>Desarrollo de documentación técnica detallada y guías de implementación para procesos de certificación digital</li>
-                            <li>Automatización de flujos de trabajo mediante scripts que reducen tiempo de configuración en un 60%</li>
-                            <li>Análisis y resolución de problemas técnicos complejos relacionados con seguridad digital y criptografía</li>
-                            <li>Colaboración en proyectos de digitalización aplicando principios de seguridad informática (ISO 27001)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Desarrollador Fullstack (Práctica Profesional)</h3>
-                        <h4 class="timeline-company">MasterBase®</h4>
-                        <p class="timeline-date">Mayo 2025 - Julio 2025</p>
-                        <ul class="timeline-description">
-                            <li>Desarrollo full-stack de plataforma web completa para gestión de proyectos freelance utilizando JavaScript/Node.js y arquitectura modular</li>
-                            <li>Diseño e implementación de componentes reutilizables y biblioteca de UI siguiendo metodología SCRUM y principios DRY</li>
-                            <li>Desarrollo de sistema de validación avanzada con reglas de negocio complejas, manejo de errores y feedback en tiempo real</li>
-                            <li>Implementación de sistema de notificaciones asíncronas con colas de mensajería y eventos programados</li>
-                            <li>Construcción de dashboards interactivos con visualización de KPIs, gráficos dinámicos y filtros avanzados</li>
-                            <li>Desarrollo de paneles de productividad con métricas en tiempo real, seguimiento de tareas y análisis de rendimiento</li>
-                            <li>Automatización de flujos de trabajo mediante workflows y triggers que optimizan procesos operativos</li>
-                            <li>Colaboración en diseño de arquitectura técnica escalable, optimización de consultas y mejoras de rendimiento</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Asistente Técnico Informático (Práctica Laboral)</h3>
-                        <h4 class="timeline-company">Duoc UC - Cetecom</h4>
-                        <p class="timeline-date">Agosto 2024 - Diciembre 2024</p>
-                        <ul class="timeline-description">
-                            <li>Desarrollo de scripts automatizados en Python y Batch para gestión de inventario tecnológico, reduciendo tiempo de registro en un 70%</li>
-                            <li>Creación de herramientas internas de reporting que generan informes automáticos de estado de equipos y recursos</li>
-                            <li>Implementación de scripts de automatización para configuración masiva de entornos de desarrollo y laboratorios</li>
-                            <li>Desarrollo de sistema de registro y seguimiento de incidencias técnicas con base de datos estructurada</li>
-                            <li>Optimización de procesos mediante automatización: backups, actualizaciones y mantenimiento preventivo</li>
-                            <li>Colaboración en integración de software institucional, pruebas de compatibilidad y documentación técnica</li>
-                            <li>Desarrollo de soluciones personalizadas para optimizar flujos de trabajo del departamento técnico</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="certificaciones" class="certifications-section">
-            <h2 class="section-title">Certificaciones y Educación</h2>
-            <p class="section-subtitle">Haz clic en cualquier certificado para ver la vista previa y descargar</p>
-            <div class="certifications-grid">
-                <div class="cert-category">
-                    <h3 class="cert-category-title">🎓 Educación Formal</h3>
-                    <div class="cert-item">
-                        <h4>Ingeniería en Informática</h4>
-                        <p class="cert-institution">Duoc UC</p>
-                        <p class="cert-date">Julio 2025</p>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Currículum Completo', 'Duoc UC', 'Agosto 2025', './src/assets/docs/certificados/curriculum-completo.pdf')">
-                        <h4>Certificado de Currículum Completo</h4>
-                        <p class="cert-institution">Duoc UC</p>
-                        <p class="cert-date">Agosto 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Módulos', 'Duoc UC', 'Agosto 2025', './src/assets/docs/certificados/modulos.pdf')">
-                        <h4>Certificado de Módulos</h4>
-                        <p class="cert-institution">Duoc UC</p>
-                        <p class="cert-date">Agosto 2025</p>
-                        <p class="cert-modules">Módulos: Programación de Software, Arquitectura de Software, Calidad de Software, Inteligencia de Negocios, Análisis y Desarrollo de Modelos de Datos</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Especialización', 'Duoc UC', 'Agosto 2025', './src/assets/docs/certificados/especializacion.pdf')">
-                        <h4>Certificado de Especialización</h4>
-                        <p class="cert-institution">Duoc UC</p>
-                        <p class="cert-date">Agosto 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item">
-                        <h4>Técnico de Nivel Medio en Administración, Mención RR.HH.</h4>
-                        <p class="cert-institution">Liceo Enrique Oyarzún Mondaca</p>
-                        <p class="cert-date">2021</p>
-                    </div>
-                </div>
-
-                <div class="cert-category">
-                    <h3 class="cert-category-title">💻 Desarrollo y Automatización</h3>
-                    <div class="cert-item clickable" onclick="openCertModal('Smartview Avanzado', 'MasterBase®', 'Mayo 2025', './src/assets/docs/certificados/smartview-avanzado.pdf')">
-                        <h4>Smartview Avanzado</h4>
-                        <p class="cert-institution">MasterBase®</p>
-                        <p class="cert-date">Mayo 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Smartview Inicial', 'MasterBase®', 'Mayo 2025', './src/assets/docs/certificados/smartview-inicial.pdf')">
-                        <h4>Smartview Inicial</h4>
-                        <p class="cert-institution">MasterBase®</p>
-                        <p class="cert-date">Mayo 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Descubre Automatización', 'MasterBase®', 'Mayo 2025', './src/assets/docs/certificados/automatizacion.pdf')">
-                        <h4>Descubre Automatización</h4>
-                        <p class="cert-institution">MasterBase®</p>
-                        <p class="cert-date">Mayo 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Artificial Intelligence Expert Certificate CAIEC®', 'Certiprof®', 'Octubre 2025', './src/assets/docs/certificados/Certificate-PedroIgnacio-SanMartinCarrasco.pdf')">
-                        <h4>Artificial Intelligence Expert Certificate CAIEC®</h4>
-                        <p class="cert-institution">Certiprof®</p>
-                        <p class="cert-date">Octubre 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('Intro to Programming', 'Kaggle', '2024', './src/assets/docs/certificados/intro-programming.pdf')">
-                        <h4>Intro to Programming</h4>
-                        <p class="cert-institution">Kaggle</p>
-                        <p class="cert-date">2024</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                </div>
-
-                <div class="cert-category">
-                    <h3 class="cert-category-title">📊 Gestión de Proyectos</h3>
-                    <div class="cert-item clickable" onclick="openCertModal('Scrum Fundamentals Certified (SFC)', 'SCRUMStudy', 'Junio 2023', './src/assets/docs/certificados/scrum-certified.pdf')">
-                        <h4>Scrum Fundamentals Certified (SFC)</h4>
-                        <p class="cert-institution">SCRUMStudy</p>
-                        <p class="cert-date">Junio 2023</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                </div>
-
-                <div class="cert-category">
-                    <h3 class="cert-category-title">🔒 Seguridad y Certificación Digital</h3>
-                    <div class="cert-item clickable" onclick="openCertModal('Certificado de Inducción Hospital Regional', 'Hospital Clínico Regional de Concepción Dr. Guillermo Grant Benavente', 'Octubre 2025', './src/assets/docs/certificados/induccion-certinet.pdf')">
-                        <h4>Certificado de Inducción</h4>
-                        <p class="cert-institution">Hospital Clínico Regional de Concepción Dr. Guillermo Grant Benavente</p>
-                        <p class="cert-date">Agosto 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                    <div class="cert-item clickable" onclick="openCertModal('ISO 27001 - Seguridad de la Información', 'Certificación Digital', 'Septiembre 2025', './src/assets/docs/certificados/iso-27001.pdf')">
-                        <h4>ISO 27001 - Seguridad de la Información</h4>
-                        <p class="cert-institution">Certificación Digital</p>
-                        <p class="cert-date">Septiembre 2025</p>
-                        <span class="cert-preview-icon">👁️ Ver certificado</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal de vista previa de certificado -->
-        <div id="cert-modal" class="cert-modal">
-            <div class="cert-modal-content">
-                <div class="cert-modal-header">
-                    <div class="cert-modal-info">
-                        <h3 id="modal-cert-title"></h3>
-                        <p id="modal-cert-institution"></p>
-                        <p id="modal-cert-date"></p>
-                    </div>
-                    <button class="cert-modal-close" onclick="closeCertModal()">✕</button>
-                </div>
-                <div class="cert-modal-body">
-                    <iframe 
-                        id="cert-preview" 
-                        src="about:blank" 
-                        title="Vista previa del certificado en formato PDF"
-                        aria-label="Visor de documento PDF del certificado seleccionado"
-                        loading="lazy"
-                        allow="fullscreen"
-                        sandbox="allow-same-origin allow-scripts"
-                    ></iframe>
-                </div>
-                <div class="cert-modal-footer">
-                    <a id="cert-download-btn" href="" download class="btn-primary">
-                        <span>📥</span> Descargar Certificado
-                    </a>
-                    <button onclick="closeCertModal()" class="btn-secondary">Cerrar</button>
-                </div>
-            </div>
-        </div>
-
-        <section id="proyectos" class="projects-section">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="./src/assets/proyecto-flota.jpg" alt="Sistema de Gestión de Flota" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Sistema Integral de Gestión de Flota (SIF)</h3>
-                        <span class="project-badge">Proyecto de Título</span>
-                        <p class="project-description">
-                            Solución full-stack para optimizar operaciones logísticas terrestres en tiempo real. Incluye gestión de combustible, órdenes de trabajo, siniestros, dashboard con KPIs y simulador de rutas. <strong>Desarrollado como proyecto de título para Ingeniería en Informática.</strong>
-                        </p>
-                        
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🎨 Frontend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Angular</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">Ionic</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">⚙️ Backend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Express.js</span>
-                                <span class="skill-tag">MySQL</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🚀 Otras características</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Dashboard KPIs</span>
-                                <span class="skill-tag">Simulador Rutas</span>
-                                <span class="skill-tag">Sistema Gestión</span>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/pedrignacio/SISTEMA-INTEGRAL-DE-FLOTA" target="_blank" rel="noopener" class="project-link">
-                                <span>📂</span> Repositorio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="./src/assets/proyecto-freelance.jpg" alt="Gestión de Proyectos Freelance" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Plataforma de Gestión Freelance</h3>
-                        <span class="project-badge">MasterBase®</span>
-                        <p class="project-description">
-                            Plataforma integral para freelancers que centraliza proyectos, tareas y clientes. Con automatización de recordatorios, paneles de productividad y dashboards con KPIs en tiempo real. <strong>Desarrollado en la plataforma oficial MasterBase® utilizando sus herramientas nativas.</strong>
-                        </p>
-                        
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🎨 Frontend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">MasterBase® UI</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">⚙️ Backend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">MasterBase®</span>
-                                <span class="skill-tag">Lógicas de Negocio</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🚀 Otras características</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Automatización</span>
-                                <span class="skill-tag">Dashboards</span>
-                                <span class="skill-tag">Gestión Proyectos</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="./src/assets/proyecto-kiosko.jpg" alt="TU KIOSKO - Tienda Online" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">TU KIOSKO</h3>
-                        <span class="project-badge">En Desarrollo</span>
-                        <p class="project-description">
-                            Tienda online chilena construida con React que permite explorar productos, gestionar carrito de compras y realizar pagos a través de Flow.cl. Utiliza Supabase para la gestión de productos y usuarios.
-                        </p>
-                        
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🎨 Frontend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">Tailwind CSS</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">⚙️ Backend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Supabase</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🚀 Otras características</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">E-commerce</span>
-                                <span class="skill-tag">Flow.cl</span>
-                                <span class="skill-tag">Carrito Compras</span>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/pedrignacio/tu-kiosko" target="_blank" rel="noopener" class="project-link">
-                                <span>📂</span> Repositorio
-                            </a>
-                            <a href="https://pedrignacio.github.io/tu-kiosko/" target="_blank" rel="noopener" class="btn-secondary">
-                                <span>🌐</span> Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="./src/assets/proyecto-pcsystem.jpg" alt="Web Institucional PCSystem" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Web Institucional PCSystem</h3>
-                        <span class="project-badge">En Desarrollo</span>
-                        <p class="project-description">
-                            Web institucional para PCSystem (Hualpén, Chile), desarrollada con enfoque en accesibilidad y diseño responsivo. Presenta los servicios del local: ciber, soporte informático y mantenimiento de equipos.
-                        </p>
-                        
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🎨 Frontend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">Tailwind CSS</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">⚙️ Backend</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Supabase</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                            </div>
-                        </div>
-
-                        <div class="project-tech-section">
-                            <h4 class="tech-section-title">🚀 Otras características</h4>
-                            <div class="project-tech">
-                                <span class="skill-tag">Diseño Responsivo</span>
-                                <span class="skill-tag">Accesibilidad</span>
-                                <span class="skill-tag">Web Institucional</span>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/pedrignacio/PCSYSTEM" target="_blank" rel="noopener" class="project-link">
-                                <span>📂</span> Repositorio
-                            </a>
-                            <a href="https://pcsystem.onrender.com/" target="_blank" rel="noopener" class="btn-secondary">
-                                <span>🌐</span> Ver Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicios" class="services-section">
-            <h2 class="section-title">Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">💻</span>
-                    <h3>Desarrollo Web Full Stack</h3>
-                    <p>Aplicaciones web completas con Angular, Node.js y MySQL</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">📱</span>
-                    <h3>Desarrollo Móvil</h3>
-                    <p>Apps móviles híbridas con Ionic y TypeScript</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🔧</span>
-                    <h3>Automatización de Procesos</h3>
-                    <p>Scripts y herramientas para optimizar flujos de trabajo</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="proceso" class="process-section">
-            <h2 class="section-title">Mi Proceso de Desarrollo</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Análisis</h3>
-                    <p>Entendimiento de requerimientos y planificación</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Diseño</h3>
-                    <p>Arquitectura de software y diseño de base de datos</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Desarrollo</h3>
-                    <p>Implementación con metodologías ágiles</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Testing</h3>
-                    <p>Pruebas unitarias y de integración</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="habilidades" class="skills-section">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h3 class="skill-category-title">Frontend</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">📜</span> JavaScript</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🅰️</span> Angular</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🌐</span> HTML5</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🎨</span> CSS3</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">⚛️</span> React</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">💨</span> Tailwind CSS</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">📘</span> TypeScript</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">📱</span> Ionic</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">▲</span> Next.js</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-server"></i></div>
-                        <h3 class="skill-category-title">Backend</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">🟢</span> Node.js</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">🚂</span> Express.js</span>
-                        <span class="skill-badge basic"><span class="skill-icon">🐍</span> Python</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-database"></i></div>
-                        <h3 class="skill-category-title">Bases de Datos</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">🗄️</span> MySQL</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">💾</span> SQL</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">📊</span> Diseño de BD</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">📐</span> Modelado de Datos</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">⚡</span> Supabase</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">🔥</span> Firebase</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-tools"></i></div>
-                        <h3 class="skill-category-title">Herramientas y DevOps</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">🔀</span> Git</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🐙</span> GitHub</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">📦</span> Control de Versiones</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">☁️</span> GCP</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">💻</span> Hardware</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-project-diagram"></i></div>
-                        <h3 class="skill-category-title">Gestión de Proyectos</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">⚡</span> Metodologías Ágiles</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🏃</span> Scrum</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">⚠️</span> Gestión de Riesgos</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">📅</span> Planificación</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">🌊</span> Waterfall</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="skill-category-title">Soporte y Operaciones</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-badge advanced"><span class="skill-icon">🔧</span> Soporte TI</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">🔐</span> Certificados Digitales</span>
-                        <span class="skill-badge advanced"><span class="skill-icon">✍️</span> Firma Electrónica</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">🛡️</span> SafeNet</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">📝</span> GoSign</span>
-                        <span class="skill-badge intermediate"><span class="skill-icon">✅</span> ISO 27001</span>
-                        <span class="skill-badge basic"><span class="skill-icon">📈</span> SAP ERP</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="herramientas" class="tools-section">
-            <h2 class="section-title">Herramientas y Programas</h2>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fab fa-github"></i></div>
-                    <h3 class="tool-name">GitHub</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fas fa-code"></i></div>
-                    <h3 class="tool-name">Visual Studio Code</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fab fa-java"></i></div>
-                    <h3 class="tool-name">Apache NetBeans</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fas fa-database"></i></div>
-                    <h3 class="tool-name">Oracle SQL Developer</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
-                    <h3 class="tool-name">SQL Data Modeler</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fab fa-figma"></i></div>
-                    <h3 class="tool-name">Figma</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fas fa-pencil-ruler"></i></div>
-                    <h3 class="tool-name">Balsamiq</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fas fa-book"></i></div>
-                    <h3 class="tool-name">PSeInt</h3>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
-                    <h3 class="tool-name">GitKraken</h3>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="contact-section">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-subtitle">¿Tienes un proyecto en mente? Estoy siempre interesado en nuevos proyectos y oportunidades de desarrollo.</p>
-            
-            <div class="contact-container">
-                <div class="contact-left">
-                    <div class="contact-info-card">
-                        <h3>Información de Contacto</h3>
-                        <div class="contact-info-list">
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">
-                                    <span class="contact-icon">📧</span>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Email</p>
-                                    <a href="mailto:psanmartincarrasco@gmail.com" class="contact-link">
-                                        psanmartincarrasco@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">
-                                    <span class="contact-icon">📱</span>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Teléfono</p>
-                                    <a href="https://wa.me/56939629170" target="_blank" rel="noopener" class="contact-link">
-                                        +56 9 3962 9170
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">
-                                    <span class="contact-icon">💼</span>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">LinkedIn</p>
-                                    <a href="https://www.linkedin.com/in/pedroignaciosanmartincarrasco/" target="_blank" rel="noopener" class="contact-link">
-                                        linkedin.com/in/pedroignaciosanmartincarrasco
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">
-                                    <span class="contact-icon">📍</span>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Ubicación</p>
-                                    <span class="contact-link">Hualpén, Bío-Bío, Chile</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="whatsapp-section">
-                        <h3>¿Prefieres WhatsApp?</h3>
-                        <p>Si tienes alguna pregunta o quieres conversar directamente, puedes contactarme por WhatsApp para una conversación más rápida.</p>
-                        <a href="https://wa.me/56939629170?text=Hola,%20estoy%20interesado%20en%20tus%20servicios%20de%20desarrollo" target="_blank" rel="noopener" class="whatsapp-button">
-                            <span class="whatsapp-icon">💬</span>
-                            Enviar Mensaje por WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-right">
-                    <div class="contact-form-card">
-                        <h3>Envíame un Mensaje</h3>
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="tu@ejemplo.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono (Opcional)</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Asunto</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Selecciona un asunto</option>
-                                    <option value="proyecto">Nuevo Proyecto</option>
-                                    <option value="colaboracion">Colaboración</option>
-                                    <option value="consulta">Consulta General</option>
-                                    <option value="otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Cuéntame sobre tu proyecto o consulta..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-button">
-                                <span>📤</span> Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- El resto del contenido vive en páginas dedicadas: About, Experiencia, Proyectos, etc. -->
     </main>
 
     <!-- Botón Scroll to Top -->

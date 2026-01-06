@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e27"/>
+      <stop offset="1" stop-color="#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a9eff"/>
+      <stop offset="1" stop-color="#2196f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect x="70" y="80" width="1060" height="540" rx="20" fill="#111827" opacity="0.35"/>
+  <rect x="70" y="80" width="6" height="540" fill="url(#accent)"/>
+  <text x="120" y="200" fill="#e0e0e0" font-size="54" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="700">Web Institucional PCSystem</text>
+  <text x="120" y="265" fill="#a0a0a0" font-size="26" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">React • TypeScript • Tailwind • Deploy</text>
+  <g opacity="0.9" fill="#4a9eff">
+    <path d="M210 430h420c12 0 22-10 22-22V290c0-12-10-22-22-22H210c-12 0-22 10-22 22v118c0 12 10 22 22 22zm0-18c-2 0-4-2-4-4V290c0-2 2-4 4-4h420c2 0 4 2 4 4v118c0 2-2 4-4 4H210z"/>
+    <path d="M430 520h-70c-5 0-9-4-9-9s4-9 9-9h70c5 0 9 4 9 9s-4 9-9 9z"/>
+    <path d="M770 520h240v-32H770v32zm0-70h330v-32H770v32zm0-70h280v-32H770v32z"/>
+  </g>
+</svg>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyecto SIF: sistema full stack con dashboard, KPIs y simulador de rutas para gestión de flota." />
+  <meta name="author" content="Pedro San Martín" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0a0e27" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pedrignacio.github.io/portafolio-website/projects/sif.html" />
+  <meta property="og:title" content="SIF | Proyectos | Pedro San Martín" />
+  <meta property="og:description" content="Sistema full stack con dashboard, KPIs y simulador de rutas para gestión de flota." />
+  <meta property="og:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/proyecto-flota.svg" />
+  <meta property="og:site_name" content="Pedro San Martín" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://pedrignacio.github.io/portafolio-website/projects/sif.html" />
+  <meta property="twitter:title" content="SIF | Proyectos | Pedro San Martín" />
+  <meta property="twitter:description" content="Sistema full stack con dashboard, KPIs y simulador de rutas para gestión de flota." />
+  <meta property="twitter:image" content="https://pedrignacio.github.io/portafolio-website/src/assets/proyecto-flota.svg" />
+  <title>SIF | Proyectos | Pedro San Martín</title>
+
+  <link rel="canonical" href="https://pedrignacio.github.io/portafolio-website/projects/sif.html" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Portafolio — Pedro San Martín",
+        "url": "https://pedrignacio.github.io/portafolio-website/",
+        "inLanguage": "es-CL"
+      },
+      {
+        "@type": "Person",
+        "name": "Pedro San Martín",
+        "url": "https://pedrignacio.github.io/portafolio-website/",
+        "jobTitle": "Desarrollador Full Stack",
+        "sameAs": [
+          "https://github.com/pedrignacio",
+          "https://www.linkedin.com/in/pedroignaciosanmartincarrasco/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hualpén",
+          "addressRegion": "Bío-Bío",
+          "addressCountry": "CL"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="../src/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../src/styles/normalize.css" />
+  <link rel="stylesheet" href="../src/styles/main.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
+<body>
+  <div class="reading-progress"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="../index.html">PSM</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../about.html" class="nav-link">Sobre Mí</a></li>
+          <li><a href="../experience.html" class="nav-link">Experiencia</a></li>
+          <li><a href="../certifications.html" class="nav-link">Certificaciones</a></li>
+          <li><a href="../projects.html" class="nav-link">Proyectos</a></li>
+          <li><a href="../services.html" class="nav-link">Servicios</a></li>
+          <li><a href="../skills.html" class="nav-link">Habilidades</a></li>
+          <li><a href="../tools.html" class="nav-link">Herramientas</a></li>
+          <li><a href="../contact.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <main>
+    <section class="page-hero section-padding">
+      <div class="container">
+        <p><a href="../projects.html" class="project-link">← Volver a Proyectos</a></p>
+        <h1 class="page-title">Sistema Integral de Gestión de Flota (SIF)</h1>
+        <p class="page-subtitle">Proyecto full-stack con dashboard, KPIs y simulador de rutas.</p>
+      </div>
+    </section>
+
+    <section class="project-detail section-padding">
+      <div class="container">
+        <div class="project-detail-grid">
+          <div>
+            <img src="../src/assets/proyecto-flota.svg" alt="Portada del proyecto SIF" class="project-image" loading="lazy" />
+          </div>
+          <div>
+            <h2 class="section-title">Resumen</h2>
+            <p class="about-text">
+              Solución full-stack para optimizar operaciones logísticas terrestres en tiempo real. Incluye gestión de combustible, órdenes de trabajo, siniestros, dashboard con KPIs y simulador de rutas.
+            </p>
+
+            <h3 class="principle-title">Stack</h3>
+            <div class="project-tech">
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Ionic</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+
+            <h3 class="principle-title">Rol</h3>
+            <p class="about-text">
+              Aporte principal en frontend y en backend para autenticación (registro/login), además de documentación técnica. Complemento con entregables de apoyo como mockups y documentación de proyecto (Gantt e historias de usuario).
+            </p>
+
+            <h3 class="principle-title">Highlights técnicos</h3>
+            <ul class="timeline-description">
+              <li>Dashboard con KPIs y vistas operativas orientadas a monitoreo y toma de decisiones</li>
+              <li>Autenticación (register/login) en Node.js/Express con flujo claro y documentación de endpoints</li>
+              <li>Modelado y persistencia en MySQL para entidades clave (órdenes de trabajo, siniestros, combustible)</li>
+              <li>Simulador de rutas como herramienta de análisis para escenarios operacionales</li>
+              <li>Entregables de proyecto: mockups, planificación (Gantt) e historias de usuario para alinear alcance y requerimientos</li>
+            </ul>
+
+            <div class="project-links">
+              <a href="https://github.com/pedrignacio/SISTEMA-INTEGRAL-DE-FLOTA" target="_blank" rel="noopener" class="project-link">
+                <span>📂</span> Repositorio
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="current-year"></span> Pedro San Martín. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="../src/scripts/main.js" defer></script>
+</body>
+
+</html>

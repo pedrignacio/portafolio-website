@@ -1,0 +1,96 @@
+name: Lighthouse
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Start server
+        run: |
+          nohup npm start >/dev/null 2>&1 &
+          for i in {1..60}; do
+            if curl -sSf http://127.0.0.1:8080 >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not start in time" >&2
+          exit 1
+
+      - name: Run Lighthouse
+        run: npm run lighthouse:ci
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: |
+            lighthouse-report.html
+            lighthouse-report.json
+          if-no-files-found: error
+
+      - name: Comment scores on PR
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('lighthouse-report.json', 'utf8'));
+
+            const score = (value) => Math.round((value ?? 0) * 100);
+            const cats = report.categories || {};
+
+            const perf = score(cats.performance?.score);
+            const a11y = score(cats.accessibility?.score);
+            const best = score(cats['best-practices']?.score);
+            const seo  = score(cats.seo?.score);
+
+            const url = report.finalUrl || 'http://127.0.0.1:8080';
+
+            const body = [
+              '### Lighthouse (CI)',
+              `URL: ${url}`,
+              '',
+              `- Performance: ${perf}/100`,
+              `- Accessibility: ${a11y}/100`,
+              `- Best Practices: ${best}/100`,
+              `- SEO: ${seo}/100`,
+              '',
+              'Reporte HTML adjunto en Artifacts (lighthouse-report).'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });

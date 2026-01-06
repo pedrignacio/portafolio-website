@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pedrignacio.github.io/portafolio-website/sitemap.xml

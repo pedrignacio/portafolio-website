@@ -2,11 +2,11 @@
 
 Portafolio web personal desarrollado con HTML5, CSS3 y JavaScript vanilla. Diseño minimalista y moderno con tema oscuro, animaciones suaves y totalmente responsive.
 
-![Portfolio Preview](./docs/preview.png)
+![Portfolio Preview](./src/assets/preview.svg)
 
 ## 🌐 Demo en Vivo
 
-[Ver Demo](https://pedrignacio.github.io/portfolio-website) *(actualizar con tu URL de GitHub Pages)*
+[Ver Demo](https://pedrignacio.github.io/portafolio-website/)
 
 ## ✨ Características
 
@@ -36,19 +36,20 @@ Portafolio web personal desarrollado con HTML5, CSS3 y JavaScript vanilla. Dise�
 ### Herramientas de Desarrollo
 - **Node.js** v18+
 - **npm** - Gestión de paquetes
-- **Live Server** - Servidor de desarrollo local
+- **http-server** - Servidor de desarrollo local
 - **Jest** - Framework de testing (configurado)
 - **Git** - Control de versiones
 
 ## 📂 Estructura del Proyecto
 
 ```
-portfolio-website/
+portafolio-website/
 ├── src/
-│   ├── assets/                 # Recursos multimedia
-│   │   ├── profile-photo.jpg   # Foto de perfil
-│   │   ├── proyecto-flota.jpg  # Imagen proyecto 1
-│   │   └── proyecto-freelance.jpg # Imagen proyecto 2
+│   ├── assets/                 # Recursos multimedia (imágenes y placeholders)
+│   │   ├── preview.svg         # Preview del sitio (OG/Twitter)
+│   │   ├── favicon.svg         # Favicon
+│   │   ├── proyecto-*.svg      # Imágenes (placeholder) de proyectos
+│   │   └── docs/certificados/  # Certificados PDF
 │   ├── pages/
 │   │   └── index.html          # Página principal
 │   ├── scripts/
@@ -77,8 +78,8 @@ portfolio-website/
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/pedrignacio/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/pedrignacio/portafolio-website.git
+cd portafolio-website
 ```
 
 2. **Instalar dependencias**
@@ -156,9 +157,25 @@ npm run clean
 - **Responsive Images**: Imágenes adaptadas según viewport
 - **Minificación**: Código optimizado para producción
 
+## 🖼️ Imágenes (dónde van)
+
+- Las imágenes del sitio viven en `src/assets/`.
+- Por defecto dejé **placeholders en SVG** para que el sitio no muestre imágenes rotas.
+- Si quieres usar JPG/PNG reales, coloca tus archivos en `src/assets/` y actualiza los `src` en `index.html` (o reemplaza los SVG manteniendo el mismo nombre).
+
 ## 📦 Despliegue
 
 ### GitHub Pages
+
+Este repo ya incluye un workflow para desplegar con **GitHub Actions**.
+
+1. Ve a **Settings → Pages**
+2. En **Build and deployment**, selecciona **Source: GitHub Actions**
+3. Haz push a `main` y el sitio se publica automáticamente
+
+El deploy sirve también:
+- `robots.txt`: https://pedrignacio.github.io/portafolio-website/robots.txt
+- `sitemap.xml`: https://pedrignacio.github.io/portafolio-website/sitemap.xml
 
 1. **Configurar GitHub Pages**
 ```bash
@@ -175,7 +192,7 @@ git push origin gh-pages
 - Carpeta: `/src` o `root`
 - Guarda los cambios
 
-El sitio estará disponible en: `https://pedrignacio.github.io/portfolio-website`
+El sitio estará disponible en: `https://pedrignacio.github.io/portafolio-website/`
 
 ### Netlify/Vercel
 
@@ -195,6 +212,15 @@ npm run test:coverage
 # Ejecutar tests en modo watch
 npm run test:watch
 ```
+
+## 🧭 Lighthouse (performance)
+
+Genera un reporte local en HTML:
+
+1. En una terminal: `npm start`
+2. En otra terminal: `npm run lighthouse`
+
+El reporte queda en `lighthouse-report.html`.
 
 ## 🤝 Contribuciones
 

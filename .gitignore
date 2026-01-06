@@ -38,3 +38,7 @@ logs/
 # Temporary files
 *.tmp
 .temp/
+
+# Lighthouse
+lighthouse-report.html
+lighthouse-report.json
