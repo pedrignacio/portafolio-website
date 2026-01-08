@@ -8,6 +8,9 @@
     --primary: #4a9eff;
     --border: #2a3f5f;
     --shadow: rgba(0, 0, 0, 0.5);
+
+    /* Color de texto sobre fondos con acento (gradientes) */
+    --on-accent: var(--text-primary);
 }
 
 /* Modo Claro */
@@ -20,6 +23,9 @@
     --primary: #2563eb;
     --border: #e5e7eb;
     --shadow: rgba(0, 0, 0, 0.1);
+
+    /* En modo claro, el acento es oscuro: usar texto claro encima */
+    --on-accent: var(--bg-primary);
 }
 
 /* Transiciones suaves para el cambio de tema */
@@ -1282,14 +1288,14 @@ main {
 
 /* Skills Section */
 .skills-section {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .skills-featured {
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-radius: 12px;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     border: 1px solid var(--border);
     box-shadow: 0 5px 15px var(--shadow);
 }
@@ -1329,39 +1335,45 @@ main {
 }
 
 .skill-category {
-    background-color: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--shadow);
-    border: 1px solid var(--border);
-    transition: transform 0.3s ease;
+    background-color: var(--bg-secondary);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
     animation: fadeInUp 0.6s ease forwards;
 }
 
 .skill-category:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.4);
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--bg-secondary), rgba(74, 158, 255, 0.1));
 }
 
 .skill-category-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--accent);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .skill-category-icon {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--accent), var(--primary));
-    border-radius: 12px;
-    box-shadow: 0 4px 12px var(--shadow);
-    color: var(--text-primary);
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--accent);
 }
 
 .skill-category-icon i {
@@ -1369,8 +1381,8 @@ main {
 }
 
 .skill-category-title {
-    color: var(--accent);
-    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.2rem;
     margin: 0;
     font-weight: 600;
 }
@@ -1379,6 +1391,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
+    justify-content: center;
 }
 
 .skill-badge {
@@ -1408,7 +1421,7 @@ main {
 /* Skill levels */
 .skill-badge.advanced {
     background: linear-gradient(135deg, var(--accent), var(--primary));
-    color: var(--text-primary);
+    color: var(--on-accent);
     box-shadow: 0 2px 8px var(--shadow);
 }
 
@@ -1419,7 +1432,7 @@ main {
 
 .skill-badge.intermediate {
     background: linear-gradient(135deg, var(--accent), var(--primary));
-    color: var(--text-primary);
+    color: var(--on-accent);
     box-shadow: 0 2px 8px var(--shadow);
 }
 
@@ -1430,7 +1443,7 @@ main {
 
 .skill-badge.basic {
     background: linear-gradient(135deg, var(--accent), var(--primary));
-    color: var(--text-primary);
+    color: var(--on-accent);
     box-shadow: 0 2px 8px var(--shadow);
 }
 
@@ -1441,7 +1454,7 @@ main {
 
 .skill-badge.soft {
     background: linear-gradient(135deg, var(--accent), var(--primary));
-    color: var(--text-primary);
+    color: var(--on-accent);
     box-shadow: 0 2px 8px var(--shadow);
 }
 
