@@ -1418,27 +1418,25 @@ main {
 }
 
 .skill-badge.intermediate {
-    background-color: var(--bg-secondary);
-    color: var(--accent);
-    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .skill-badge.intermediate:hover {
-    background-color: var(--accent);
-    color: var(--text-primary);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px var(--shadow);
 }
 
 .skill-badge.basic {
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
-    border: 2px solid var(--text-secondary);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .skill-badge.basic:hover {
-    background-color: var(--text-secondary);
-    color: var(--bg-primary);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px var(--shadow);
 }
 
 .skill-badge.soft {
