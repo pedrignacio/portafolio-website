@@ -139,6 +139,16 @@ npm run clean
 - Enlaces a redes sociales (LinkedIn, GitHub)
 - Efectos hover interactivos
 
+## 📩 Formulario de contacto (envío real)
+
+Este portafolio está pensado para **GitHub Pages** (sitio estático). Para que el formulario te llegue al correo sin abrir `mailto:`, la opción más simple es **Formspree**.
+
+1. Crea una cuenta y un formulario en Formspree.
+2. Copia tu endpoint (ejemplo: `https://formspree.io/f/xxxxxxx`).
+3. Reemplaza el `action` del formulario en [contact.html](contact.html) por tu endpoint.
+
+Con eso, el submit hará `POST` y mostrará un `alert` de éxito/error (sin cambiar la UI).
+
 ## 🎨 Paleta de Colores
 
 ```css

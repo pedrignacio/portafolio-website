@@ -206,42 +206,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========================================
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Crear asunto del correo
+        contactForm.addEventListener('submit', async (e) => {
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            const phoneEl = document.getElementById('phone');
+            const subjectEl = document.getElementById('subject');
+            const messageEl = document.getElementById('message');
+
+            if (!nameEl || !emailEl || !subjectEl || !messageEl) return;
+
+            const name = nameEl.value;
+            const email = emailEl.value;
+            const phone = phoneEl ? phoneEl.value : '';
+            const subject = subjectEl.value;
+            const message = messageEl.value;
+
             const subjectMap = {
                 'proyecto': 'Nuevo Proyecto',
                 'colaboracion': 'Colaboración',
                 'consulta': 'Consulta General',
                 'otro': 'Otro'
             };
-            const emailSubject = subjectMap[subject] || 'Consulta desde Portfolio';
-            
-            // Crear cuerpo del correo
+            const emailSubject = subjectMap[subject] || 'Consulta desde Portafolio';
+
+            const replyToEl = document.getElementById('replyto');
+            if (replyToEl) replyToEl.value = email;
+            const emailSubjectEl = document.getElementById('email-subject');
+            if (emailSubjectEl) emailSubjectEl.value = emailSubject;
+
+            const action = contactForm.getAttribute('action') || '';
+            const isFormspree = action.includes('https://formspree.io/f/');
+            const isConfigured = isFormspree && !action.includes('REEMPLAZA_ESTE_ID');
+
+            if (isConfigured) {
+                e.preventDefault();
+
+                try {
+                    const formData = new FormData(contactForm);
+                    if (phone) formData.set('phone', phone);
+
+                    const response = await fetch(action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Form request failed');
+                    }
+
+                    alert('¡Gracias! Tu mensaje se envió correctamente. Te responderé al correo que indicaste.');
+                    contactForm.reset();
+                } catch {
+                    alert('Ups, no se pudo enviar el mensaje ahora. Intenta de nuevo o escríbeme a psanmartincarrasco@gmail.com');
+                }
+
+                return;
+            }
+
+            // Fallback (sin backend): abrir cliente de correo.
+            e.preventDefault();
+
             let emailBody = `Hola Pedro,\n\n`;
             emailBody += `Mi nombre es: ${name}\n`;
             emailBody += `Email: ${email}\n`;
             if (phone) {
                 emailBody += `Teléfono: ${phone}\n`;
             }
+            emailBody += `\nAsunto: ${emailSubject}\n`;
             emailBody += `\nMensaje:\n${message}`;
-            
-            // Crear enlace mailto
+
             const mailtoLink = `mailto:psanmartincarrasco@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Abrir cliente de correo
             window.location.href = mailtoLink;
-            
-            // Mostrar mensaje de éxito
+
             setTimeout(() => {
-                alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo. Si no se abre automáticamente, puedes enviar un correo a psanmartincarrasco@gmail.com');
+                alert('Para que el formulario envíe directo (sin abrir tu correo), configura Formspree en contact.html. Por ahora se abrirá tu cliente de correo.');
                 contactForm.reset();
             }, 100);
         });

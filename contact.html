@@ -163,7 +163,10 @@
           <div class="contact-right">
             <div class="contact-form-card">
               <h3>Envíame un Mensaje</h3>
-              <form id="contact-form" class="contact-form">
+              <form id="contact-form" class="contact-form" action="https://formspree.io/f/xeeoyyey" method="POST">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <input type="hidden" id="email-subject" name="_subject" value="Mensaje desde Portafolio" />
+                <input type="hidden" id="replyto" name="_replyto" value="" />
                 <div class="form-group">
                   <label for="name">Nombre Completo</label>
                   <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
